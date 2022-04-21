@@ -1,16 +1,8 @@
 import { Suspense } from "react"
 import { Canvas } from "@react-three/fiber"
 import { PerspectiveCamera, OrthographicCamera, OrbitControls, Stage, Html } from "@react-three/drei"
+import Light from "./Light"
 import Chair from "./Chair"
-
-function Light() {
-  return (
-    <>
-      <ambientLight />
-      <pointLight position={[10, 10, 10]} />
-    </>
-  )
-}
 
 function CanvasSection() {
   return (
@@ -18,15 +10,15 @@ function CanvasSection() {
       {/* <PerspectiveCamera makeDefault /> */}
       {/* <OrthographicCamera makeDefault /> */}
       <OrbitControls enablePan={true} enableZoom={true} enableRotate={true} />
-      <Light />
-      <Chair scale={[4, 4, 4]} position={[0, -2, 0]} modelPath={`src/assets/models/black_leather_chair.gltf`} direction={[0, 0.1, 0.02]} />
+      <Light position={[10, 10, 10]} />
+      <Chair scale={[4, 4, 4]} position={[0, -2, 0]} modelPath={`src/assets/models/cushion.gltf`} direction={{ x: 0, y: 0.15, z: 0 }} />
     </Canvas>
   )
 }
 
 export default function Section1() {
   return (
-    <div id="section1" className="h-screen w-full bg-yellow-200 flex items-center justify-between">
+    <div id="section1" className="h-screen w-full bg-black text-white flex items-center justify-between">
       <div className="w-1/2 p-[7%]">
         <h2 className="font-bold text-36">section1</h2>
         <h3 className="mb-10 font-bold text-14">section1 headline text</h3>
