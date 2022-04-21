@@ -11,7 +11,7 @@ function CanvasSection() {
       {/* <OrthographicCamera makeDefault position={[0, 0, -1000]} /> */}
       <OrbitControls enablePan={true} enableZoom={false} enableRotate={true} />
       <Light position={[1000, 20, -100]} />
-      <Chair scale={[3, 3, 3]} position={[0, 0, 0]} modelPath={`src/assets/models/dublin.gltf`} direction={{ x: 0, y: 0.5, z: 0 }} />
+      <Chair scale={[3, 3, 3]} position={[0, 0, 0]} modelPath={`src/assets/models/dublin.gltf`} direction={[0, 0.15, 0]} />
     </Canvas>
   )
 }

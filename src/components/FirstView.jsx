@@ -10,7 +10,7 @@ function CanvasSection() {
       {/* <PerspectiveCamera makeDefault /> */}
       <OrbitControls enablePan={true} enableZoom={false} enableRotate={true} />
       <Light position={[10, 10, 10]} />
-      <Chair scale={[5, 5, 5]} position={[0, -2.2, 0]} modelPath={`src/assets/models/black_leather_chair.gltf`} direction={{ x: 0, y: 0.1, z: 0 }} />
+      <Chair scale={[5, 5, 5]} position={[0, -2.2, 0]} modelPath={`src/assets/models/black_leather_chair.gltf`} direction={[0, 0.1, 0]} />
     </Canvas>
   )
 }
