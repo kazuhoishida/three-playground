@@ -2,21 +2,24 @@ import { useState } from "react"
 import { useGLTF } from "@react-three/drei"
 import { useRotate } from "./useRotate"
 
-export default function Chair({ scale, position, modelPath }) {
+export default function Chair({ scale, position, modelPath, direction }) {
   const { scene } = useGLTF(modelPath)
-  const [direction, setDirection] = useState(0.1)
+  const { nodes, materials } = useGLTF(modelPath)
 
-  const ref = useRotate(direction)
+  // console.log(nodes)
+  // console.log(materials)
+
+  const [rotateAnime, setRotateAnime] = useState(direction)
+  const ref = useRotate(rotateAnime)
 
   const resetPos = (e) => {
-    setDirection(-1 * direction)
+    setRotateAnime({ ...rotateAnime, y: -1 * rotateAnime.y })
   }
 
   return (
-    <group dispose={null}>
-      <mesh ref={ref}>
-        <primitive object={scene} scale={scale} position={position} onClick={resetPos} />
-      </mesh>
+    <group dispose={null} position={position}>
+      {/* <mesh geometry={nodes.koltuk.geometry} scale={scale} material={materials.chair} onClick={resetPos} ref={ref} /> */}
+      <primitive object={scene} scale={scale} onClick={resetPos} ref={ref} />
     </group>
   )
 }

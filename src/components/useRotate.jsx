@@ -6,7 +6,9 @@ export const useRotate = (direction) => {
 
   useFrame(({ clock }) => {
     const a = clock.getElapsedTime()
-    ref.current.rotation.y = a * direction
+    ref.current.rotation.x = a * direction.x
+    ref.current.rotation.y = a * direction.y
+    ref.current.rotation.z = a * direction.z
   })
   return ref
 }
