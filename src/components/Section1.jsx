@@ -11,7 +11,7 @@ function CanvasSection() {
       {/* <OrthographicCamera makeDefault /> */}
       <OrbitControls enablePan={true} enableZoom={true} enableRotate={true} />
       <Light position={[10, 10, 10]} />
-      <Chair scale={[4, 4, 4]} position={[0, -2, 0]} modelPath={`src/assets/models/cushion.gltf`} direction={{ x: 0, y: 0.15, z: 0 }} />
+      <Chair scale={[4, 4, 4]} position={[0, -2, 0]} modelPath={`src/assets/models/cushion.gltf`} direction={[0, 0.05, 0]} />
     </Canvas>
   )
 }
