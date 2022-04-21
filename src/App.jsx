@@ -16,11 +16,6 @@ function Light() {
 function Section({ model, scale, position }) {
   return (
     <>
-      {/* 
-      <Stage>
-        <Chair scale={[1, 1, 1]} position={position} modelPath={model} />
-        <Chair scale={[1, 1, 1]} position={position} modelPath={model} />
-      </Stage> */}
       <Html>
         <h2 className="w-[200px] text-center -translate-x-1/2 text-gray font-bold">Chair Title</h2>
       </Html>
@@ -38,8 +33,7 @@ export default function App() {
           {/* <PerspectiveCamera makeDefault /> */}
           <OrbitControls enablePan={true} enableZoom={true} enableRotate={true} />
           <Light />
-          <Section model={`src/assets/models/black_leather_chair.gltf`} scale={[1, 1, 1]} position={[-0.5, 0, 1]} />
-          <Section model={`src/assets/models/black_leather_chair.gltf`} scale={[1, 1, 1]} position={[0.5, 0, 1]} />
+          <Section model={`src/assets/models/black_leather_chair.gltf`} scale={[1, 1, 1]} position={[0, 0, 0]} />
         </Canvas>
       </Suspense>
     </div>
