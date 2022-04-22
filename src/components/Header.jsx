@@ -1,8 +1,13 @@
+import BoxLogo from "./BoxLogo"
+import { Canvas } from "@react-three/fiber"
+
 export default function Header() {
   return (
     <header className="flex justify-between items-center px-6 fixed top-0 left-0 w-full py-4 z-[1000]">
-      <a href="/">
-        <img src="src/image/logo.svg" alt="logo" className="w-[30px] h-[30px]" />
+      <a href="/" className="w-[30px] h-[30px]">
+        <Canvas>
+          <BoxLogo />
+        </Canvas>
       </a>
       <ul className="flex">
         <li className="mr-6">

@@ -4,6 +4,7 @@ import FirstView from "./components/FirstView"
 import Section1 from "./components/Section1"
 import Section2 from "./components/Section2"
 import EnvironmentSection from "./components/EnvironmentSection"
+import MovingLight from "./components/MovingLight"
 
 export default function App() {
   return (
@@ -13,6 +14,7 @@ export default function App() {
         <Section1 />
         <Section2 />
         <EnvironmentSection />
+        <MovingLight />
       </div>
     </Layout>
   )
