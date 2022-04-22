@@ -8,28 +8,50 @@ export default function BlackLeatherChair({ ...props }) {
   const { nodes, materials } = useGLTF("src/assets/models/black_leather_chair.gltf")
 
   useEffect(() => {
-    console.log(modelMesh.current)
+    if (modelMesh.current === null) return
 
-    // const chairModel = document.getElementById("#black-leather-chair")
     const tl = gsap.timeline()
 
     tl.to(modelMesh.current.rotation, {
       duration: 1,
+      delay: 0.1,
       ease: "Expo.easeInOut",
       x: 0,
-      y: 7,
-      z: 0,
-    }).to(modelMesh.current.rotation, {
-      duration: 2,
-      ease: "Expo.easeInOut",
-      x: 0,
-      y: 0.5,
+      y: Math.PI / 2,
       z: 0,
     })
+      .to(modelMesh.current.rotation, {
+        duration: 1,
+        ease: "Expo.easeInOut",
+        x: 0,
+        y: Math.PI,
+        z: 0,
+      })
+      .to(modelMesh.current.rotation, {
+        duration: 1,
+        ease: "Expo.easeInOut",
+        x: 0,
+        y: (Math.PI * 3) / 2,
+        z: 0,
+      })
+      .to(modelMesh.current.rotation, {
+        duration: 1,
+        ease: "Expo.easeInOut",
+        x: 0,
+        y: Math.PI * 2,
+        z: 0,
+      })
+      .to(modelMesh.current.rotation, {
+        duration: 2,
+        ease: "Expo.easeInOut",
+        x: 0,
+        y: 0.5,
+        z: 0,
+      })
   }, [modelMesh])
   return (
     <group ref={group} {...props} dispose={null} scale={props.scale}>
-      <mesh geometry={nodes.koltuk.geometry} material={materials.chair} rotation={[0, -0.5, 0]} ref={modelMesh} />
+      <mesh geometry={nodes.koltuk.geometry} material={materials.chair} rotation={[0, Math.PI / 2, 0]} ref={modelMesh} />
     </group>
   )
 }
