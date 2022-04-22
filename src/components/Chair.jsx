@@ -13,7 +13,10 @@ export default function Chair({ scale, position, modelPath, direction }) {
   const ref = useRotate(rotateAnime)
 
   const resetPos = (e) => {
-    setRotateAnime({ ...rotateAnime, y: -1 * rotateAnime.y })
+    const reverseRotate = rotateAnime.map(function (a) {
+      return a * -1
+    })
+    setRotateAnime(reverseRotate)
   }
 
   return (

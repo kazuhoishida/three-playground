@@ -1,16 +1,37 @@
-import { Suspense } from "react"
+import { Suspense, useState, useRef, useEffect } from "react"
 import { Canvas } from "@react-three/fiber"
-import { PerspectiveCamera, OrbitControls, Stage, Html } from "@react-three/drei"
+import { PerspectiveCamera, OrbitControls, Stage, Html, Environment } from "@react-three/drei"
 import Light from "./Light"
-import Chair from "./Chair"
+import BlackLeatherChair from "./BlackLeatherChair"
+import { gsap } from "gsap"
 
 function CanvasSection() {
+  const [isZoom, setIsZoom] = useState(false)
+  const cameraRef = useRef(null)
+
+  const ZOOM_IN = 20
+  const ZOOM_OUT = 0
+
+  const zoomCamera = () => {
+    setIsZoom(!isZoom)
+  }
+
+  useEffect(() => {
+    if (cameraRef.current == null) return
+    gsap.to(cameraRef.current.position, {
+      duration: 1,
+      ease: "Expo.easeInOut",
+      z: isZoom ? ZOOM_IN : ZOOM_OUT,
+    })
+  }, [isZoom])
+
   return (
     <Canvas className="w-full h-full">
-      {/* <PerspectiveCamera makeDefault /> */}
+      <PerspectiveCamera makeDefault position={[3, 0.5, ZOOM_OUT]} ref={cameraRef} zoom={1} />
       <OrbitControls enablePan={true} enableZoom={false} enableRotate={true} />
       <Light position={[10, 10, 10]} />
-      <Chair scale={[5, 5, 5]} position={[0, -2.2, 0]} modelPath={`src/assets/models/black_leather_chair.gltf`} direction={{ x: 0, y: 0.1, z: 0 }} />
+      <BlackLeatherChair scale={[2, 2, 2]} position={[0, -0.8, 0]} onClick={zoomCamera} />
+      {/* <Environment preset="sunset" background /> */}
     </Canvas>
   )
 }

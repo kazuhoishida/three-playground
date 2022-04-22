@@ -2,16 +2,16 @@ import { Suspense } from "react"
 import { Canvas } from "@react-three/fiber"
 import { PerspectiveCamera, OrthographicCamera, OrbitControls, Stage, Html } from "@react-three/drei"
 import Light from "./Light"
-import Chair from "./Chair"
+import Cushion from "./Cushion"
 
 function CanvasSection() {
   return (
     <Canvas className="w-full h-full">
-      {/* <PerspectiveCamera makeDefault /> */}
+      <PerspectiveCamera makeDefault position={[0, 0, -10]} />
       {/* <OrthographicCamera makeDefault /> */}
       <OrbitControls enablePan={true} enableZoom={true} enableRotate={true} />
       <Light position={[10, 10, 10]} />
-      <Chair scale={[4, 4, 4]} position={[0, -2, 0]} modelPath={`src/assets/models/cushion.gltf`} direction={{ x: 0, y: 0.15, z: 0 }} />
+      <Cushion scale={[4, 4, 4]} position={[0, -2, 0]} rotation={[-0.4, 3, 0]} />
     </Canvas>
   )
 }
