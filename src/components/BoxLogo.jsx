@@ -7,7 +7,7 @@ export default function BoxLogo() {
   const ref = useRef()
   const [hovered, setHover] = useState(false)
 
-  useFrame((state, delta) => {
+  useFrame(() => {
     ref.current.rotation.x += 0.001
     ref.current.rotation.y += 0.01
     ref.current.rotation.z += 0.001
