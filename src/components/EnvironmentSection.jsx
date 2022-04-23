@@ -19,11 +19,14 @@ function MoonMesh() {
     ref.current.position.z = r * Math.sin(theta)
   }, [theta])
   return (
-    <mesh position={[-1, 1, 1]} ref={ref}>
-      <pointLight />
-      <sphereGeometry args={[0.2, 16, 16]} rotation={[0, 1, 0]} />
-      <meshStandardMaterial color="white" transparent="true" />
-    </mesh>
+    <group>
+      <pointLight intensity={3} color="rgb(250, 200, 0)" />
+      <mesh position={[-1, 1, 1]} ref={ref}>
+        <pointLight intensity={2} color="rgb(250, 200, 0)" />
+        <sphereGeometry args={[0.2, 32, 32]} rotation={[0, 0.8, 0]} />
+        <meshStandardMaterial color="rgb(250, 200, 0)" />
+      </mesh>
+    </group>
   )
 }
 
@@ -36,7 +39,7 @@ function CanvasSection({ env, star }) {
       <OrbitControls enablePan={true} enableZoom={false} enableRotate={true} />
       {/* <Light position={[10, 10, 10]} /> */}
       <MoonMesh />
-      <Astronaut position={[0, -1, 0]} />
+      <Astronaut position={[0, -1, 0]} scale={[0.8, 0.8, 0.8]} rotation={[0, Math.PI / 3, 0]} />
       {star && <Stars radius={100} depth={100} count={5000} factor={10} saturation={0} fade speed={1} />}
       <Environment background={true} preset={envPresets[env]} />
     </Canvas>
