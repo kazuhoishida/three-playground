@@ -31,7 +31,7 @@ function MoonMesh() {
 }
 
 function CanvasSection({ env, star }) {
-  const envPresets = ["sunset", "dawn", "night"]
+  const envPresets = ["night", "sunset", "dawn"]
 
   return (
     <Canvas className="w-full h-full">

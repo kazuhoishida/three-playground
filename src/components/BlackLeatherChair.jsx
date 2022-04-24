@@ -5,7 +5,7 @@ import { gsap } from "gsap"
 export default function BlackLeatherChair({ ...props }) {
   const group = useRef()
   const modelMesh = useRef(null)
-  const { nodes, materials } = useGLTF("src/assets/models/black_leather_chair.gltf")
+  const { nodes, materials } = useGLTF("../assets/models/black_leather_chair.gltf")
 
   useEffect(() => {
     if (modelMesh.current === null) return
