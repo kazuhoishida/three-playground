@@ -30,7 +30,7 @@ function CanvasSection() {
     if (lightRef.current === undefined) return
 
     gsap.to(lightRef.current.position, {
-      duration: 1,
+      duration: 0.3,
       ease: "Expo.easeOut",
       x: mousePos.x,
       y: mousePos.y,
@@ -51,7 +51,7 @@ function CanvasSection() {
       <pointLight position={[-1000, 100, 100]} intensity={0.3} />
       <pointLight position={[300, 0, 300]} intensity={0.2} />
       <OrbitControls enableZoom={false} />
-      {/* <pointLight position={[0, 0, 100]} color={[150, 100, 0]} intensity={0.005} ref={lightRef} /> */}
+      <pointLight position={[0, 0, 100]} color={[150, 100, 0]} intensity={0.005} ref={lightRef} />
       <CityMesh scale={[10, 10, 10]} position={[-5, 10, 0]} rotation={[0, 0, 0]} />
     </Canvas>
   )

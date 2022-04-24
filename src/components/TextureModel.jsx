@@ -5,7 +5,7 @@ export default function TextureModel({ ...props }) {
   const group = useRef()
   const { nodes, materials } = useGLTF("../assets/models/dublin.gltf")
 
-  const materialVariants = [materials.leather_dark, materials.leather_red, materials.leather_white]
+  const materialVariants = [materials.leather_dark, materials.leather_white]
 
   const [meshMaterial, setMeshMaterial] = useState(0)
 
