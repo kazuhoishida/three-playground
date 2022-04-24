@@ -6,6 +6,7 @@ import Section2 from "./components/Section2"
 import EnvironmentSection from "./components/EnvironmentSection"
 import MovingLight from "./components/MovingLight"
 import SwitchTexture from "./components/SwitchTexture"
+import City from "./components/City"
 
 export default function App() {
   return (
@@ -17,6 +18,7 @@ export default function App() {
         <EnvironmentSection />
         <MovingLight />
         <SwitchTexture />
+        <City />
       </div>
     </Layout>
   )
