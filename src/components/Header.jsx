@@ -21,7 +21,7 @@ export default function Header() {
           </a>
         </li>
         <li className="mr-6">
-          <a href="/#environement" className="font-bold">
+          <a href="/#environment" className="font-bold">
             Environment
           </a>
         </li>

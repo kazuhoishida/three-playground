@@ -1,8 +1,8 @@
-export default function Light({ position }) {
+export default function Light({ ...props }) {
   return (
     <>
       <ambientLight />
-      <pointLight position={position} />
+      <pointLight {...props} />
     </>
   )
 }
