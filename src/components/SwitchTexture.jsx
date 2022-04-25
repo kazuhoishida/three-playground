@@ -17,7 +17,7 @@ function CanvasSection() {
 
 export default function SwitchTexture() {
   return (
-    <div className="h-screen w-full flex items-center justify-between bg-gray-200">
+    <div id="switch" className="h-screen w-full flex items-center justify-between bg-gray-200">
       <Suspense fallback={<p className="text-center">loading now...</p>}>
         <CanvasSection />
       </Suspense>
