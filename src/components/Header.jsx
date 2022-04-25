@@ -11,18 +11,33 @@ export default function Header() {
       </a>
       <ul className="flex">
         <li className="mr-6">
-          <a href="#section1" className="font-bold">
+          <a href="/#section1" className="font-bold">
             section1
           </a>
         </li>
         <li className="mr-6">
-          <a href="#section2" className="font-bold">
+          <a href="/#section2" className="font-bold">
             section2
           </a>
         </li>
-        <li>
-          <a href="#section3" className="font-bold">
-            section3
+        <li className="mr-6">
+          <a href="/#environement" className="font-bold">
+            Environment
+          </a>
+        </li>
+        <li className="mr-6">
+          <a href="/#moving" className="font-bold">
+            Moving Light
+          </a>
+        </li>
+        <li className="mr-6">
+          <a href="/#switch" className="font-bold">
+            Switch Texture
+          </a>
+        </li>
+        <li className="mr-6">
+          <a href="/city/index.html" className="font-bold">
+            City
           </a>
         </li>
       </ul>

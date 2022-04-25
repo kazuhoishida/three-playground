@@ -32,14 +32,14 @@ function CanvasSection() {
     gsap.to(lightRef.current.position, {
       duration: 0.3,
       ease: "Expo.easeOut",
-      x: mousePos.x,
-      y: mousePos.y,
-      z: 0,
+      x: mousePos.x / 5,
+      y: 10,
+      z: (-1 * mousePos.y) / 5,
     })
 
     // gsap.to(lightRef.current, {
     //   duration: 1,
-    //   intensity: Math.abs(10 / mousePos.x),
+    //   intensity: Math.abs(1 / mousePos.x),
     // })
   }, [mousePos])
 
@@ -47,11 +47,9 @@ function CanvasSection() {
     <Canvas className="w-full h-full">
       <PerspectiveCamera makeDefault position={[0, 10, 100]} />
       {/* <OrthographicCamera makeDefault position={[0, 0, 0]} /> */}
-      <pointLight position={[-200, 1000, 100]} intensity={0.3} />
-      <pointLight position={[-1000, 100, 100]} intensity={0.3} />
-      <pointLight position={[300, 0, 300]} intensity={0.2} />
       <OrbitControls enableZoom={false} />
-      <pointLight position={[0, 0, 100]} color={[150, 100, 0]} intensity={0.005} ref={lightRef} />
+      <ambientLight />
+      <pointLight position={[0, 0, 100]} color={[150, 100, 0]} intensity={0.005} distance={50} ref={lightRef} />
       <CityMesh scale={[10, 10, 10]} position={[-5, 10, 0]} rotation={[0, 0, 0]} />
     </Canvas>
   )

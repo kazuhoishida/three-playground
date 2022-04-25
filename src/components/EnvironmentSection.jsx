@@ -59,7 +59,7 @@ export default function EnvironmentSection() {
   }
 
   return (
-    <div className="w-full h-screen bg-black relative">
+    <div id="environment" className="w-full h-screen bg-black relative">
       <div className="flex absolute bottom-[10vh] left-10 z-10">
         <button className="bg-white rounded-full px-4 mr-4" onClick={changeEnv}>
           click me ✌️
