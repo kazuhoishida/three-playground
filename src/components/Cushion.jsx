@@ -3,7 +3,7 @@ import { useGLTF } from "@react-three/drei"
 
 export default function Cushion({ ...props }) {
   const group = useRef()
-  const { nodes, materials } = useGLTF("src/assets/models/cushion.gltf")
+  const { nodes, materials } = useGLTF("../assets/models/cushion.glb")
   return (
     <group ref={group} {...props} dispose={null}>
       <group rotation={[-Math.PI / 2, 0, 0]} scale={0.01}>
@@ -17,4 +17,4 @@ export default function Cushion({ ...props }) {
   )
 }
 
-useGLTF.preload("/cushion.gltf")
+useGLTF.preload("/cushion.glb")
