@@ -3,7 +3,7 @@ import { useGLTF } from "@react-three/drei"
 
 export default function TextureModel({ ...props }) {
   const group = useRef()
-  const { nodes, materials } = useGLTF("../assets/models/dublin.glb")
+  const { nodes, materials } = useGLTF("/three-playground/dublin.glb")
 
   const materialVariants = [materials.leather_dark, materials.leather_white]
 
