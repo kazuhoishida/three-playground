@@ -1,6 +1,7 @@
 import { Suspense, useState, useRef, useEffect } from "react"
 import { Canvas, useFrame } from "@react-three/fiber"
-import { PerspectiveCamera, OrbitControls, Environment, Stars } from "@react-three/drei"
+import { PerspectiveCamera, OrbitControls, Environment, Stars, Html } from "@react-three/drei"
+import { EffectComposer, DepthOfField, Bloom } from "@react-three/postprocessing"
 import Astronaut from "./Astronaut"
 
 function MoonMesh() {
@@ -34,15 +35,21 @@ function CanvasSection({ env, star }) {
   const envPresets = ["night", "sunset", "dawn"]
 
   return (
-    <Canvas className="w-full h-full">
-      <PerspectiveCamera makeDefault position={[3, 0.5, 0]} zoom={1} />
-      <OrbitControls enablePan={true} enableZoom={false} enableRotate={true} />
-      {/* <Light position={[10, 10, 10]} /> */}
-      <MoonMesh />
-      <Astronaut position={[0, -1, 0]} scale={[0.8, 0.8, 0.8]} rotation={[0, Math.PI / 3, 0]} />
-      {star && <Stars radius={100} depth={100} count={5000} factor={10} saturation={0} fade speed={1} />}
-      <Environment background={true} preset={envPresets[env]} />
-    </Canvas>
+    <>
+      <Canvas className="w-full h-full">
+        <PerspectiveCamera makeDefault position={[3, 0.5, 0]} zoom={1} />
+        <OrbitControls enablePan={true} enableZoom={false} enableRotate={true} />
+        {/* <Light position={[10, 10, 10]} /> */}
+        <MoonMesh />
+        <Astronaut position={[0, -1, 0]} scale={[0.8, 0.8, 0.8]} rotation={[0, Math.PI / 3, 0]} />
+        {star && <Stars radius={100} depth={100} count={5000} factor={10} saturation={0} fade speed={1} />}
+        <Environment background={true} preset={envPresets[env]} />
+
+        <EffectComposer>
+          <Bloom luminanceThreshold={0} luminanceSmoothing={0.9} height={900} />
+        </EffectComposer>
+      </Canvas>
+    </>
   )
 }
 
