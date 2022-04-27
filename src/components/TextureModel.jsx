@@ -1,9 +1,10 @@
 import { useRef, useState } from "react"
 import { useGLTF } from "@react-three/drei"
+import DublinModel from "/dublin.glb"
 
 export default function TextureModel({ ...props }) {
   const group = useRef()
-  const { nodes, materials } = useGLTF("../assets/models/dublin.glb")
+  const { nodes, materials } = useGLTF(DublinModel)
 
   const materialVariants = [materials.leather_dark, materials.leather_white]
 
