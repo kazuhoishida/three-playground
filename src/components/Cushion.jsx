@@ -1,9 +1,10 @@
 import React, { useRef } from "react"
 import { useGLTF } from "@react-three/drei"
+import CushionModel from "/cushion.glb"
 
 export default function Cushion({ ...props }) {
   const group = useRef()
-  const { nodes, materials } = useGLTF("/three-playground/cushion.glb")
+  const { nodes, materials } = useGLTF(CushionModel)
   return (
     <group ref={group} {...props} dispose={null}>
       <group rotation={[-Math.PI / 2, 0, 0]} scale={0.01}>
