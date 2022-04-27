@@ -7,7 +7,7 @@ import { useGLTF } from "@react-three/drei"
 
 export default function Model({ ...props }) {
   const group = useRef()
-  const { nodes, materials } = useGLTF("../assets/models/city.glb")
+  const { nodes, materials } = useGLTF("/three-playground/city.glb")
   // console.log(nodes.build_1_column)
 
   return (

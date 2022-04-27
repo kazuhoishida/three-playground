@@ -3,7 +3,7 @@ import { useGLTF } from "@react-three/drei"
 
 export default function NeilArmstrong({ ...props }) {
   const group = useRef()
-  const { nodes, materials } = useGLTF("../assets/models/NeilArmstrong.glb")
+  const { nodes, materials } = useGLTF("/three-playground/NeilArmstrong.glb")
   return (
     <group ref={group} {...props} dispose={null}>
       <mesh geometry={nodes.astronaut_1.geometry} material={materials.StingrayPBS2} />

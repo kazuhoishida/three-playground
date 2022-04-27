@@ -3,7 +3,7 @@ import { useGLTF } from "@react-three/drei"
 
 export default function Dublin({ ...props }) {
   const group = useRef()
-  const { nodes, materials } = useGLTF("../assets/models/dublin.glb")
+  const { nodes, materials } = useGLTF("/three-playground/dublin.glb")
   return (
     <group ref={group} {...props} dispose={null}>
       <group rotation={[-Math.PI / 2, 0, 0]}>
