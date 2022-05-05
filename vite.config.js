@@ -13,6 +13,7 @@ export default defineConfig({
       input: {
         main: resolve(__dirname, "src/index.html"),
         city: resolve(__dirname, "src/city/index.html"),
+        astronaut: resolve(__dirname, "src/astronaut/index.html"),
       },
     },
   },
