@@ -1,7 +1,7 @@
 import { Suspense } from "react"
 import { Canvas } from "@react-three/fiber"
 import { PerspectiveCamera, OrthographicCamera, OrbitControls, Stage, Html } from "@react-three/drei"
-import Light from "./Light"
+import Light from "../Light"
 import Dublin from "./Dublin"
 
 function CanvasSection() {
