@@ -12,6 +12,7 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: resolve(__dirname, "src/index.html"),
+        chair: resolve(__dirname, "src/chair/index.html"),
         city: resolve(__dirname, "src/city/index.html"),
         astronaut: resolve(__dirname, "src/astronaut/index.html"),
       },
