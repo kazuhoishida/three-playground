@@ -1,11 +1,12 @@
 import { useEffect, useRef } from "react"
 import { useGLTF } from "@react-three/drei"
 import { gsap } from "gsap"
+import BlackChair from "/black_leather_chair.glb"
 
 export default function BlackLeatherChair({ ...props }) {
   const group = useRef()
   const modelMesh = useRef(null)
-  const { nodes, materials } = useGLTF("../assets/models/black_leather_chair.glb")
+  const { nodes, materials } = useGLTF(BlackChair)
 
   useEffect(() => {
     if (modelMesh.current === null) return

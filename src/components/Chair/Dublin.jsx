@@ -1,9 +1,10 @@
 import React, { useRef } from "react"
 import { useGLTF } from "@react-three/drei"
+import DublinModel from "/dublin.glb"
 
 export default function Dublin({ ...props }) {
   const group = useRef()
-  const { nodes, materials } = useGLTF("../assets/models/dublin.glb")
+  const { nodes, materials } = useGLTF(DublinModel)
   return (
     <group ref={group} {...props} dispose={null}>
       <group rotation={[-Math.PI / 2, 0, 0]}>

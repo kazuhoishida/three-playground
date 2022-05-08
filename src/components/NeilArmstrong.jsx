@@ -1,9 +1,10 @@
 import { useRef } from "react"
 import { useGLTF } from "@react-three/drei"
+import NeilArmstrongModel from "/NeilArmstrong.glb"
 
 export default function NeilArmstrong({ ...props }) {
   const group = useRef()
-  const { nodes, materials } = useGLTF("../assets/models/NeilArmstrong.glb")
+  const { nodes, materials } = useGLTF(NeilArmstrongModel)
   return (
     <group ref={group} {...props} dispose={null}>
       <mesh geometry={nodes.astronaut_1.geometry} material={materials.StingrayPBS2} />

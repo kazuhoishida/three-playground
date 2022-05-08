@@ -11,32 +11,17 @@ export default function Header() {
       </a>
       <ul className="flex">
         <li className="mr-6">
-          <a href="/#section1" className="font-bold">
-            section1
+          <a href="/three-playground/astronaut/index.html" className="font-bold">
+            Neil Armstrong
           </a>
         </li>
         <li className="mr-6">
-          <a href="/#section2" className="font-bold">
-            section2
+          <a href="/three-playground/chair/index.html" className="font-bold">
+            Chair
           </a>
         </li>
         <li className="mr-6">
-          <a href="/#environement" className="font-bold">
-            Environment
-          </a>
-        </li>
-        <li className="mr-6">
-          <a href="/#moving" className="font-bold">
-            Moving Light
-          </a>
-        </li>
-        <li className="mr-6">
-          <a href="/#switch" className="font-bold">
-            Switch Texture
-          </a>
-        </li>
-        <li className="mr-6">
-          <a href="/city/index.html" className="font-bold">
+          <a href="/three-playground/city/index.html" className="font-bold">
             City
           </a>
         </li>
